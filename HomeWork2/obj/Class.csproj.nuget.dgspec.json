@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Никита\\source\\repos\\HomeWork2\\HomeWork2\\Class.csproj": {}
+    "C:\\Users\\Никита\\source\\repos\\HomeWork2\\Пустая папка\\HomeWork2\\Class.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Никита\\source\\repos\\HomeWork2\\HomeWork2\\Class.csproj": {
+    "C:\\Users\\Никита\\source\\repos\\HomeWork2\\Пустая папка\\HomeWork2\\Class.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Никита\\source\\repos\\HomeWork2\\HomeWork2\\Class.csproj",
+        "projectUniqueName": "C:\\Users\\Никита\\source\\repos\\HomeWork2\\Пустая папка\\HomeWork2\\Class.csproj",
         "projectName": "Class",
-        "projectPath": "C:\\Users\\Никита\\source\\repos\\HomeWork2\\HomeWork2\\Class.csproj",
+        "projectPath": "C:\\Users\\Никита\\source\\repos\\HomeWork2\\Пустая папка\\HomeWork2\\Class.csproj",
         "packagesPath": "C:\\Users\\Никита\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Никита\\source\\repos\\HomeWork2\\HomeWork2\\obj\\",
+        "outputPath": "C:\\Users\\Никита\\source\\repos\\HomeWork2\\Пустая папка\\HomeWork2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Никита\\AppData\\Roaming\\NuGet\\NuGet.Config",
