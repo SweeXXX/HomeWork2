@@ -105,7 +105,7 @@ namespace Home
                 Console.Write("7 Задание.\nВведите строку: ");
                 string? str = Console.ReadLine();
 
-                string strNEW = "";
+                string strNEW = ""; 
                 foreach (var c in str)
                 {
                     if (char.IsUpper(c))
