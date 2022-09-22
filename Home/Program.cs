@@ -38,10 +38,10 @@ namespace Home
             zad1();
             zad2();
             //zad3();
-            //zad4();
-            //zad5();
-            //zad6();
-            //zad7();
+            zad4();
+            zad5();
+            zad6();
+            zad7();
             static void zad1()
             {
                 Student Nikita = new Student("Никита", "Полетаев", "12.12.2004", 228558, 5, alcogolizmCategory.alkogolic);

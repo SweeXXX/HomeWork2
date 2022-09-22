@@ -1,46 +1,30 @@
 ﻿using System;
 using System.IO;
+using Class;
 
-enum banklist
-{
-    текущий,
-    сберегательный
-}
-struct Bank
-{
-    public long number;
-    public banklist type;
-    public long balance;
-    public Bank(int number, long balance, banklist type = banklist.сберегательный)
-    {
-        this.balance = balance;
-        this.type = type;
-        this.number = number;
-    }
-    public void Print()
-    {
-        Console.WriteLine($"Number: {number}\nType: {type}\nBalance: {balance}");
-    }
-}
 namespace ClassWork
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Задание 3.1");
+            Console.WriteLine("Задание 3.1. Создать enum");
             banklist name = banklist.текущий;
             name++;//Сберегательный
             Console.WriteLine($"{name}\n");
             Console.ReadKey();
 
-            Console.WriteLine("Задание 3.2");
+            Console.WriteLine("Задание 3.2. Создать структуру Банк_List");
             Bank list  = new();
             list.number = 314159265358979;
             list.type = banklist.сберегательный;
             list.balance = 34;
             list.Print();
             Console.ReadKey();
+
+            Console.WriteLine("Задание 3.3. Заполнить структуру и распечатать");
+            Worker Bob = new Worker("Bob", vyz.КФУ);
+            Bob.Print();
         }
     }
 }
