@@ -3,41 +3,17 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Text;
 
-struct Student//1 zadanie :D
-{
-    public string surname;
-    public string name;
-    public string dr;
-    public int id;
-    public double litrs;
-    public alcogolizmCategory category;
-    public Student(string name, string surname, string dr, int id, double litrs, alcogolizmCategory category)
-    {
-        this.name = name;
-        this.surname = surname;
-        this.dr = dr;
-        this.id = id;
-        this.litrs = litrs;
-        this.category = category;
-    }
-}
-public enum alcogolizmCategory
-{
-    alkogolic = 0,
-    nealcash = 1,
-    sometimes = 2,
-    dontdrink = 3
-}
-
 namespace Home
 {
     class Program
     {
+        private const int MillisecondsTimeout = 2000;
+
         static void Main(string[] arg)
         {
             zad1();
             zad2();
-            //zad3();
+            zad3();
             zad4();
             zad5();
             zad6();
@@ -57,10 +33,12 @@ namespace Home
                     $"{Nastya.name}: {Math.Round(Nastya.litrs/alko, 2)}%\n" +
                     $"{Farik.name}: {Math.Round(Farik.litrs / alko, 2)}%\n" +
                     $"{Macksim.name}: {Math.Round(Macksim.litrs / alko, 2)}%\n");
+                Thread.Sleep(MillisecondsTimeout);
             }
 
             static void zad2()
             {
+                Console.WriteLine("2 Задание");
                 Console.WriteLine($"Тип - short.Максимальное - {short.MaxValue}.Минимальное - {short.MinValue}");
                 Console.WriteLine($"Тип - ushort.Максимальное - {ushort.MaxValue}.Минимальное - {ushort.MinValue}");
                 Console.WriteLine($"Тип - int.Максимальное - {int.MaxValue}.Минимальное - {int.MinValue}");
@@ -72,13 +50,28 @@ namespace Home
                 Console.WriteLine($"Тип - decimal.Максимальное - {decimal.MaxValue}.Минимальное - {decimal.MinValue}");
                 Console.WriteLine($"Тип - char.Максимальное - {char.MaxValue}.Минимальное - {char.MinValue}");
                 Console.WriteLine($"Тип - byte.Максимальное - {byte.MaxValue}.Минимальное - {byte.MinValue}");
-                Console.WriteLine($"Тип - sbyte.Максимальное - {sbyte.MaxValue}.Минимальное - {sbyte.MinValue}");
+                Console.WriteLine($"Тип - sbyte.Максимальное - {sbyte.MaxValue}.Минимальное - {sbyte.MinValue}\n");
+                Thread.Sleep(MillisecondsTimeout);
+            }
+            static void zad3()
+            {
+                //Каkой yf[eq формат?
+                Console.WriteLine("3 Задание");
+                Console.Write("Введите имя, город, возраст и PIN-код через запятую. ");
+                string[] input = Console.ReadLine().Split(",");
+                string name = input[0]; string city = input[1];
+                bool correctAge = byte.TryParse(input[2], out byte age);// age
+                bool correctPIN = int.TryParse(input[3], out int PIN);//PIN-код
+                char.ToUpper(name[0]); char.ToUpper(city[0]);
+                Console.WriteLine((correctAge&&correctPIN)? $"Your Name:{name}\nYour city:{city}\nYour age:{age}\nYour PIN:{PIN}\n" : "Чел...\nЧитать научись...\n");
+                Thread.Sleep(MillisecondsTimeout);
             }
             static void zad4()
             {
-                Console.Write("4 Задание. Введите Имя и Фамилию через пробел ");
+                Console.Write("4 Задание.\nВведите Имя и Фамилию через пробел ");
                 string[]? fio = Console.ReadLine().Split();
                 Console.WriteLine($"Приветствую, {fio[0][0]}.{fio[1][0]}, рад вас видеть \n");
+                Thread.Sleep(MillisecondsTimeout);
             }
             static void zad5()
             {
@@ -88,33 +81,35 @@ namespace Home
                 bool if2 = Int32.TryParse(Console.ReadLine(), out int sale);
                 Console.Write("Введите стоимость отпуска: ");
                 bool if3 = Int32.TryParse(Console.ReadLine(), out int holidayPrice);
-                Console.WriteLine($"Ответ: {Math.Ceiling((double)holidayPrice / (normPrice * (sale / 100.0)))}");
+                Console.WriteLine((if1 && if2 && if3)? $"Ответ: {Math.Ceiling((double)holidayPrice / (normPrice * (sale / 100.0)))}\n" : "Надо было ввести числа\nЧел............................\n") ;
+                Thread.Sleep(MillisecondsTimeout);
             }
             static void zad6()
             {
-                Console.Write("6 Задание. Введите скорость таракана в км/ч: ");
+                Console.Write("6 Задание.\nВведите скорость таракана в км/ч: ");
                 string str = Console.ReadLine().Replace(".", ",");
                 bool Exep = double.TryParse(str, out double result);
                 if (Exep)
-                    Console.WriteLine($"Скорость такарана в см/с: {Math.Floor((result / 0.036))}");
+                    Console.WriteLine($"Скорость такарана в см/с: {Math.Floor((result / 0.036))}\n");
                 else
                     Console.WriteLine($"Надо было ввести число, чел ты...\n.\n.\n.\n");
+                Thread.Sleep(MillisecondsTimeout);
             }
             static void zad7()
             {
                 Console.Write("7 Задание.\nВведите строку: ");
                 string? str = Console.ReadLine();
 
-                string strNEW = ""; 
+                string strNEW = "";
                 foreach (var c in str)
                 {
                     if (char.IsUpper(c))
                         strNEW += char.ToLower(c);
                     else
                         strNEW += char.ToUpper(c);
-
                 }
-                Console.WriteLine(strNEW);
+                Console.WriteLine($"Результат:{strNEW}");
+                //Thread.Sleep(MillisecondsTimeout);
             }
         }
     }

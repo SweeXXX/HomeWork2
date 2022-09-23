@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Class
 {
-    public enum banklist
+    public enum Banklist
     {
         текущий,
         сберегательный
     }
-    public enum vyz
+    public enum Vyz
     {
         КФУ,
         КАИ,
@@ -21,23 +21,24 @@ namespace Class
     public struct Worker
     {
         public string name;
-        public vyz Vyz;
-        public Worker(string name, vyz Vyz)
+        public Vyz Vyz;
+        public Worker(string name, Vyz Vyz)
         {
             this.name = name;
             this.Vyz = Vyz;
         }
-        public void Print()
+        public void Print(bool Enter=true)
         {
-            Console.WriteLine($"name: {this.name}\nVyz: {this.Vyz}");
+            
+            Console.WriteLine(Enter? $"name: {this.name}\nVyz: {this.Vyz}\n": $"name: {this.name}\nVyz: {this.Vyz}");
         }
     }
     public struct Bank
     {
         public long number;
-        public banklist type;
+        public Banklist type;
         public long balance;
-        public Bank(int number, long balance, banklist type = banklist.сберегательный)
+        public Bank(int number, long balance, Banklist type = Banklist.сберегательный)
         {
             this.balance = balance;
             this.type = type;
